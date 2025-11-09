@@ -7,7 +7,7 @@ import superagent from "superagent";
 const program = new Command();
 
 program
-  .requiredOption("-h, --host <host>", "Server host (обов'язковий параметр)")
+  .requiredOption("-H, --host <host>", "Server host (обов'язковий параметр)")
   .requiredOption("-p, --port <port>", "Server port (обов'язковий параметр)")
   .requiredOption("-c, --cache <cacheDir>", "Path to cache directory (обов'язковий параметр)");
 

@@ -1,23 +1,27 @@
 {
   "name": "lab5",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "HTTP cache server with http.cat proxy",
+  "type": "module",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon main.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PapaRumskiy/bc-2025-5.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Taras",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/PapaRumskiy/bc-2025-5/issues"
   },
   "homepage": "https://github.com/PapaRumskiy/bc-2025-5#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
   "dependencies": {
-    "commander": "^14.0.2"
+    "commander": "^12.1.0",
+    "superagent": "^10.1.0"
   }
 }
