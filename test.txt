@@ -1,0 +1,22 @@
+# Перевірка сервера
+curl http://localhost:3000/200
+
+# Перевірка кешування
+# Після першого запиту файл 200.jpg збережеться у ./cache
+# Наступний запит поверне його з диска (без запиту до http.cat)
+curl http://localhost:3000/200 -o 200_from_cache.jpg
+
+# PUT — збереження своєї картинки у кеш
+curl -X PUT http://localhost:3000/999 -H "Content-Type: image/jpeg" --data-binary "@200_from_cache.jpg"
+
+# GET — перевірка, що своя картинка тепер доступна
+curl http://localhost:3000/999 -o test_999.jpg
+
+# DELETE — видалення картинки з кешу
+curl -X DELETE http://localhost:3000/999
+
+# GET — перевірка, що після видалення повертає 404
+curl -i http://localhost:3000/999
+
+# Непідтримуваний метод
+curl -X POST http://localhost:3000/200
